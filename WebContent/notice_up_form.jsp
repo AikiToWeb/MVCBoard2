@@ -5,7 +5,10 @@ PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");	// 페이징 정
 NoticeList notice = (NoticeList)request.getAttribute("notice");	// 게시글 정보가 들어있는 인스턴스
 
 String args = "?cpage=" + pageInfo.getCpage();
+String schtype = "", keyword = "";		// hidden 객체에 넣을 검색관련 정보를 저장할 변수
 if (pageInfo.getKeyword() != null && !pageInfo.getKeyword().equals("")) {
+	schtype = pageInfo.getSchtype();	keyword = pageInfo.getKeyword();
+	// 검색조건이 있을 경우에만 schtype과 keyword에 정보를 저장
 	args += "&schtype=" + pageInfo.getSchtype() + "&keyword=" + pageInfo.getKeyword();
 }	// 검색 조건이 있을 경우에만 쿼리 스트링으로 만들어 줌
 %>
@@ -20,8 +23,8 @@ if (pageInfo.getKeyword() != null && !pageInfo.getKeyword().equals("")) {
 <form name="frmNotice" action="notice_up_proc.brd" method="post">
 <input type="hidden" name="idx" value="<%=notice.getNl_idx() %>" />
 <input type="hidden" name="cpage" value="<%=pageInfo.getCpage() %>" />
-<input type="hidden" name="schtype" value="<%=pageInfo.getSchtype() %>" />
-<input type="hidden" name="keyword" value="<%=pageInfo.getKeyword() %>" />
+<input type="hidden" name="schtype" value="<%=schtype %>" />
+<input type="hidden" name="keyword" value="<%=keyword %>" />
 글종류 : 
 <input type="radio" name="nl_kind" value="a" id="kinda"
 	<% if (notice.getNl_kind().equals("a")) { %> checked="checked" <% } %> /><label for="kinda">단순공지</label>

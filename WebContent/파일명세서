@@ -12,9 +12,9 @@ MVC공지사항 파일 명세서
 
 수정 폼 	 : notice_up_form.brd		-> NoticeUpAct		-> NoticeUpSvc			-> NoticeUpDao		-> notice_up_form.jsp
 
-수정 처리	 : notice_up_proc.brd
+수정 처리	 : notice_up_proc.brd	-> NoticeUpProcAct	-> NoticeUpProcSvc	-> NoticeUpProcDao	-> notice_view.brd
 
-삭제 처리 	 : notice_del_proc.brd
+삭제 처리 	 : notice_del_proc.brd -> NoticeDelProcAct	-> NoticeDelProcSvc	-> NoticeDelProcDao	-> notice_list.brd
 
 
 
