@@ -47,6 +47,7 @@ public class NoticeCtrl extends HttpServlet {
     		action = new NoticeUpProcAct();
     		break;
     	case "/notice_del_proc.brd" :	// 게시글 삭제 처리 요청
+    		action = new NoticeDelProcAct();
     		break;
     	}
     	

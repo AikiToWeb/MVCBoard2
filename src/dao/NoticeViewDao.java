@@ -42,7 +42,7 @@ public class NoticeViewDao {
 				notice.setNl_content(rs.getString("nl_content"));
 				notice.setNl_readcnt(rs.getInt("nl_readcnt"));
 				notice.setNl_date(rs.getString("nl_date"));
-				notice.setAi_idx(rs.getInt("ad_idx"));
+				notice.setAi_idx(rs.getInt("ai_idx"));
 				
 			}	 // rs가 비었으면 else 없이 그냥 notice에 null이 들어있는 상태로 리턴함
 			

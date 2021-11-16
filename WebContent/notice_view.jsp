@@ -29,6 +29,6 @@ else if (notice.getNl_kind().equals("d"))	kind = "보도자료";
 <br /><br />
 <input type="button" value="목록으로" onclick="location.href='notice_list.brd<%=args %>';" />
 <input type="button" value="글 수정" onclick="location.href='notice_up_form.brd<%=args %>&idx=<%=notice.getNl_idx() %>';" />
-<input type="button" value="글 삭제" />
+<input type="button" value="글 삭제" onclick="location.href='notice_del_proc.brd"/>
 </body>
 </html>
